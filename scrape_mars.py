@@ -31,8 +31,8 @@ def scrape():
         news_titles.append(title)
         paragraphs.append(para)
         
-    news_title = news_titles[0]
-    paragraph = paragraphs[0]
+    news_title = news_titles
+    paragraph = paragraphs
 
 
 #JPL Mars Space Images-Features Image    
@@ -83,8 +83,8 @@ def scrape():
         
 #store data in a dictionary
     scrape_mars = {
-        'news_title': news_title,
-        'paragraph' : paragraph,
+        'news_title': news_title[0],
+        'paragraph' : paragraph[0],
         'featured_image_url': featured_image_url,
         'fact_table': fact_table,
         'hemisphere_image_urls': hemisphere_image_urls
@@ -94,3 +94,5 @@ def scrape():
     browser.quit()
 
     return scrape_mars
+
+#print(scrape())
